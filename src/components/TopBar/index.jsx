@@ -4,6 +4,7 @@ import { useLocation, useMatch } from "react-router-dom";
 
 import fetchModel from "../../lib/fetchModelData";
 import "./styles.css";
+import { getUser } from "../../api/api";
 
 const STUDENT_NAME = "Nguyễn Vĩnh Tùng";
 
@@ -26,7 +27,7 @@ function TopBar() {
         try {
           const user = await fetchModel(`/user/${photosUserId}`);
           if (!ignore) {
-            setContextLabel(`Ảnh của ${user.first_name} ${user.last_name}`);
+            setContextLabel(`Ảnh của ${user.first_name}  ${user.last_name}`);
           }
           return;
         } catch {

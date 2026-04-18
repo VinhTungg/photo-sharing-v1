@@ -66,8 +66,9 @@ function UserPhotos() {
       try {
         const [userData, photoData] = await Promise.all([
           fetchModel(`/user/${userId}`),
-          fetchModel(`/photosOfUser/${userId}`),
+          fetchModel(`/photo/${userId}`)
         ]);
+        console.log(photoData);
 
         if (!ignore) {
           setUser(userData);

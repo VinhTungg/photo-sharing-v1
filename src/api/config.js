@@ -1,0 +1,1 @@
+export const BASE_API = "https://rts9jn-8081.csb.app/api";

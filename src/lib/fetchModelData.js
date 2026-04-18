@@ -1,18 +1,19 @@
+import { BASE_API } from "../api/config";
+
 /**
- * fetchModel - Fetch a model from the web server.
- *
- * @param {string} url      The URL to issue the GET request.
- *
+ * @param {string} path  Đường dẫn tương đối (ví dụ: "/user/list")
  */
-async function fetchModel(url) {
-  const response = await fetch(url, {
+async function fetchModel(path) {
+  const fullUrl = `${BASE_API}${path}`;
+
+  const response = await fetch(fullUrl, {
     headers: {
       Accept: "application/json",
     },
   });
 
   if (!response.ok) {
-    throw new Error(`Không thể tải dữ liệu từ ${url} (mã lỗi ${response.status}).`);
+    throw new Error(`Không thể tải dữ liệu từ ${fullUrl} (mã lỗi ${response.status}).`);
   }
 
   return response.json();

@@ -70,7 +70,7 @@ function UserList() {
           <React.Fragment key={item._id}>
             <ListItemButton component={Link} to={`/users/${item._id}`} >
               <ListItemText
-                primary={`${item.first_name} ${item.last_name}`}
+                primary={`${item.last_name}`}
                 secondary={item.location}
               />
             </ListItemButton>
